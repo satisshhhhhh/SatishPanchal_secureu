@@ -1,0 +1,20 @@
+[+] URL: google.com
+----------------------------------------
+[+] SSL Details :
+- [200] - www.google.com
+- [200] - blog.google.com
+- [200] - groups.google.com
+- [200] - home.google.com
+- [200] - sites.google.com
+[+] Total Subdomains are : 5
+----------------------------------------
+[+] SSL Details : - SSL:  
+ - issued_to : google.com
+----------------------------------------
+[+] Ports
+Port 110	 : Open
+Port 135	 : Open
+Port 139	 : Open
+----------------------------------------
+[+] Header : 
+ {xss}

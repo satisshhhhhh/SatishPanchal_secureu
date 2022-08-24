@@ -127,7 +127,7 @@ if __name__ == '__main__':
         logs_file.write("----------------------------------------\n")
         logs_file.write("[+] SSL Details :\n")
         for sub in valid_subdomains:
-            logs_file.write(f"- {sub}\n")
+            logs_file.write(f"- {sub}\n\n")
         logs_file.write(f"[+] Total Subdomains are : {len(valid_subdomains)}\n")
         logs_file.write("----------------------------------------\n")
         logs_file.write("[+] SSL Details : ")
@@ -137,7 +137,7 @@ if __name__ == '__main__':
         for port in ports_scanned:
             logs_file.write(f"{port}\n")
         logs_file.write("----------------------------------------\n")
-        logs_file.write("[+] Header : \n {xss}")
-        print("Checkout logs.txt!")
+        logs_file.write(f"[+] Header : \n {xss}")
+        print("\n Checkout logs.txt!")
     except:
         print("Something went wring while creating logs.txt :(")
