@@ -2,12 +2,13 @@ import requests
 import socket
 import ssl
 import sys
+import threading
 
 # variables where we'll store our data in...
 valid_subdomains = []
-ssl_certificate = ""
 ports_scanned = []
-xss = ""
+ssl_certificate = []
+xss = []
 
 #fetching subdomains of given website
 def fetch_subdomains(dom_name, sub_dom):
@@ -43,10 +44,10 @@ def check_SSL(domain):
         try:        
             s.connect((hostname, 443))
             print("- SSL : Enabled")
-            ssl_certificate = "Enabled"
+            ssl_certificate.append("Enabled")
         except:
             print("- SSL : Disabled")
-            ssl_certificate = "Disabled"
+            ssl_certificate.append("Disabled")
 
     print(f'- issued_to : {domain}')
 
@@ -83,17 +84,16 @@ def x_xss_protection(domain):
     url="https://"+domain
     res=requests.get(url)
     if res.headers['x-xss-protection']=='1':
-        xss = ("X-XSS-Protection : Enabled")
+        xss.append("X-XSS-Protection : Enabled")
     else:
-        xss = ("X-XSS-Protection : Disabled")
-    print(xss)
+        xss.append("X-XSS-Protection : Disabled")
+    print(print(', '.join(xss)))
 
     
 # Driver code or Main Function
 if __name__ == '__main__':
     
     dom_name = input("Enter the Domain Name : ")
-    print("\n")
   
     # opening the text file that contains all out subdomain names
     with open('D:\\My Projects\\Secure-U\\names.txt','r') as file:
@@ -129,14 +129,14 @@ if __name__ == '__main__':
             logs_file.write(f"- {sub}\n")
         logs_file.write(f"[+] Total Subdomains are : {len(valid_subdomains)}\n")
         logs_file.write("----------------------------------------\n")
-        logs_file.write("[+] SSL Details : ")
-        logs_file.write(f"- SSL: {ssl_certificate} \n - issued_to : {dom_name}\n")
+        logs_file.write("[+] SSL Details : \n")
+        logs_file.write(f"- SSL: {ssl_certificate[0]} \n- issued_to : {dom_name}\n")
         logs_file.write("----------------------------------------\n")
         logs_file.write("[+] Ports\n")
         for port in ports_scanned:
             logs_file.write(f"{port}\n")
         logs_file.write("----------------------------------------\n")
-        logs_file.write("[+] Header : \n {xss}")
+        logs_file.write(f"[+] Header : \n{xss[0]}")
         print("\n Checkout logs.txt!")
     except:
         print("Something went wring while creating logs.txt :(")
