@@ -2,7 +2,6 @@ import requests
 import socket
 import ssl
 import sys
-import threading
 
 # variables where we'll store our data in...
 valid_subdomains = []
@@ -96,7 +95,7 @@ if __name__ == '__main__':
     dom_name = input("Enter the Domain Name : ")
   
     # opening the text file that contains all out subdomain names
-    with open('D:\\My Projects\\Secure-U\\names.txt','r') as file:
+    with open('names.txt','r') as file:
 
         name = file.read()
           
