@@ -27,7 +27,7 @@ $ pip install ssl
 #### USAGE :
 The tool can be executed by running the below commannd
 ```
-$ python3 assignment.py
+$ python assignment.py
 ```
 This will ask you to enter a website (Ex: google.com)
 Enter the url and press enter, and wait for a few seconds!
