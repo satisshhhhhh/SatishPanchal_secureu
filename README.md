@@ -15,7 +15,7 @@
 This python script gives output on terminal and also stores the data to the log.txt file and yes every feature has it's own dedicated function so play around!
 ***
 #### INSTALLATION :
-Web Scraper requires Python 3.7 or higher version to run.
+Tool requires Python 3.7 or higher version to run.
 ```
 $ git clone https://github.com/satisshhhhhh/SatishPanchal_secureu.git
 ```
