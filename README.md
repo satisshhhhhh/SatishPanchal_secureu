@@ -31,5 +31,7 @@ $ python assignment.py
 ```
 This will ask you to enter a website (Ex: google.com)
 Enter the url and press enter, and wait for a few seconds!
-
+#### NOTE :
+To keep it simple I've added names.txt which conatins 100 subdomain names on line 98 of assignment.py, one can add subdomain.txt to checkout other subdomains!
+***
 ![Screenshot 2022-08-25 233409](https://user-images.githubusercontent.com/58567211/186737374-00f935ee-9ec3-433e-ab1d-7722edb2243f.png)
