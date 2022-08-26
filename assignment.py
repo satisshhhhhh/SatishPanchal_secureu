@@ -41,7 +41,7 @@ def check_SSL(domain):
     ctx = ssl.create_default_context()
     with ctx.wrap_socket(socket.socket(), server_hostname=domain) as s:
         try:        
-            s.connect((hostname, 443))
+            s.connect((domain, 443))
             print("- SSL : Enabled")
             ssl_certificate.append("Enabled")
         except:
